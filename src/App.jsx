@@ -87,7 +87,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative flex flex-col md:flex-row items-center justify-between pt-24 md:pt-32 pb-20 z-20 h-full">
         
         {/* Left Content */}
-        <div className="order-2 md:order-1 md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left space-y-2 md:space-y-4 mt-8 md:mt-0 z-10">
+        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left space-y-3 md:space-y-4 z-10">
           <h3 className="font-cursive text-primary text-4xl md:text-5xl transform -rotate-2 -ml-2">Hello, I'm</h3>
           {/* Scaled down text to prevent overflow/overlap */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[0.9] uppercase tracking-wide text-gray-900 dark:text-white drop-shadow-sm">
@@ -111,17 +111,8 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Center Portrait */}
-        <div className="order-1 md:order-2 md:w-1/3 flex justify-center relative px-4 z-0">
-          <img 
-            src="/profile3.jpg" 
-            alt="Sourav Chakraborty" 
-            className="max-h-[50vh] md:max-h-[75vh] w-auto object-contain object-bottom filter grayscale contrast-125 fade-bottom"
-          />
-        </div>
-
         {/* Right Features */}
-        <div className="order-3 md:w-1/3 flex flex-col justify-center items-center md:items-end text-center md:text-right space-y-8 mt-12 md:mt-0 pl-0 md:pl-4 z-10">
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-end text-center md:text-right space-y-8 mt-12 md:mt-0 pl-0 md:pl-8 z-10">
           <div className="flex items-center justify-end w-full">
             <p className="text-gray-800 dark:text-gray-200 text-base max-w-[220px] leading-relaxed font-medium text-center md:text-right">
               Bridging the gap between data science and production web architecture.
