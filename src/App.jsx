@@ -613,10 +613,11 @@ const ExperienceAndProcess = () => {
               </div>
               <div className="flex justify-between items-start border-b border-gray-300 dark:border-gray-800 pb-4 transition-colors duration-300">
                 <div>
-                  <h3 className="font-bold text-gray-800 dark:text-gray-200">Smart India Hackathon</h3>
-                  <p className="text-xs text-gray-600 dark:text-gray-500 mt-1">Team Lead - Parivekshan AI</p>
+                  <h3 className="font-bold text-gray-800 dark:text-gray-200">Diploma on Programming Languages</h3>
+                  <p className="text-xs text-gray-600 dark:text-gray-500 mt-1">Institute of Intellectual Information</p>
+                  <p className="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">Algorithm, Flowchart, C, C++, Java, Python, HTML</p>
                 </div>
-                <span className="text-primary text-sm font-display tracking-widest">2025</span>
+                <span className="text-primary text-sm font-display tracking-widest">2024-25</span>
               </div>
               <div className="flex justify-between items-start border-b border-gray-300 dark:border-gray-800 pb-4 transition-colors duration-300">
                 <div>
