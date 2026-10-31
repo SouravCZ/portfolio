@@ -5,6 +5,7 @@ export const projects = [
     title: "Parivekshan AI",
     role: "AI Decision Support System",
     subrole: "Predictive Land Acquisition Delay Monitoring",
+    image: "/projects/parivekshan-ai.jpg",
     imgPlaceholder: "from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900",
     link: "https://github.com/SouravCZ/byte-freaks",
     summary:

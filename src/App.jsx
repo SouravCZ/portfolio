@@ -77,10 +77,10 @@ const Hero = () => {
       {/* Huge Background Text - Fixed watermark */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[110vw] flex justify-center z-0 pointer-events-none select-none">
         <h1 className="text-[12vw] font-display font-bold text-primary opacity-[0.03] dark:opacity-[0.05] tracking-tighter leading-none m-0 p-0 transition-opacity duration-300 whitespace-nowrap hidden md:block">
-          DATA SCIENCE
+          SOURAVCZ
         </h1>
         <h1 className="text-[20vw] font-display font-bold text-primary opacity-[0.03] dark:opacity-[0.05] tracking-tighter leading-none m-0 p-0 transition-opacity duration-300 whitespace-nowrap md:hidden">
-          DATA
+          SOURAVCZ
         </h1>
       </div>
 
@@ -243,8 +243,21 @@ const Projects = () => {
 
               {/* Right Image/Graphic */}
               <div className={`w-full md:w-1/2 h-64 md:h-full bg-gradient-to-br ${proj.imgPlaceholder} relative flex items-center justify-center overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/10 dark:bg-black/40 group-hover:bg-transparent transition-colors duration-500"></div>
-                <h3 className="font-display text-4xl md:text-6xl font-bold text-gray-900 dark:text-white opacity-20 transform -rotate-6 scale-150 group-hover:scale-125 transition-transform duration-700">{proj.title}</h3>
+                {proj.image ? (
+                  <div className="w-full h-full relative overflow-hidden">
+                    <img
+                      src={proj.image}
+                      alt={proj.title}
+                      className="w-full h-full object-cover object-left-top transform group-hover:scale-105 transition-transform duration-700 ease-out" style={{ objectPosition: "left top" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-10 transition-opacity duration-500"></div>
+                  </div>
+                ) : (
+                  <>
+                    <div className="absolute inset-0 bg-black/10 dark:bg-black/40 group-hover:bg-transparent transition-colors duration-500"></div>
+                    <h3 className="font-display text-4xl md:text-6xl font-bold text-gray-900 dark:text-white opacity-20 transform -rotate-6 scale-150 group-hover:scale-125 transition-transform duration-700">{proj.title}</h3>
+                  </>
+                )}
               </div>
             </div>
           ))}
@@ -471,19 +484,28 @@ const FreelanceServices = () => {
   const services = [
     {
       title: "Full-Stack Web Dev",
-      icon: <Laptop className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
-      iconBg: "bg-blue-100 dark:bg-blue-900/30",
+      bgClass: "bg-[#0000FF]",
+      textColor: "text-white",
+      descColor: "text-white/95",
+      dividerColor: "border-white/10",
+      tagClass: "border-white/40 text-white bg-white/10",
+      icon: <Laptop className="w-6 h-6 text-[#0000FF]" />,
+      iconBg: "bg-white",
       description: "End-to-end web applications built with modern frameworks tailored exactly to your business needs.",
       thumbnails: [
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=200&h=200&fit=crop",
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200&h=200&fit=crop",
         "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=200&h=200&fit=crop"
       ],
-      tags: ["React/Vue", "Node.js", "+more"],
-      highlight: false
+      tags: ["React/Vue", "Node.js", "+more"]
     },
     {
       title: "Machine Learning",
+      bgClass: "bg-primary",
+      textColor: "text-white",
+      descColor: "text-white/95",
+      dividerColor: "border-white/10",
+      tagClass: "border-white/40 text-white bg-white/10",
       icon: <Brain className="w-6 h-6 text-primary" />,
       iconBg: "bg-white",
       description: "Custom AI models, predictive analytics, and intelligent decision support systems to scale your workflows.",
@@ -492,21 +514,24 @@ const FreelanceServices = () => {
         "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=200&h=200&fit=crop",
         "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=200&h=200&fit=crop"
       ],
-      tags: ["Predictive Models", "Data Pipelines", "+more"],
-      highlight: true
+      tags: ["Predictive Models", "Data Pipelines", "+more"]
     },
     {
       title: "Data Analytics",
-      icon: <PieChart className="w-6 h-6 text-green-600 dark:text-green-400" />,
-      iconBg: "bg-green-100 dark:bg-green-900/30",
+      bgClass: "bg-[#5FD65F]",
+      textColor: "text-gray-950",
+      descColor: "text-gray-900",
+      dividerColor: "border-black/10",
+      tagClass: "border-black/30 text-gray-950 bg-black/5",
+      icon: <PieChart className="w-6 h-6 text-[#1e7e34]" />,
+      iconBg: "bg-white",
       description: "Data pipelines, interactive dashboards, and deep data analysis to extract actionable insights from raw data.",
       thumbnails: [
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=200&fit=crop",
         "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=200&h=200&fit=crop",
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&h=200&fit=crop"
       ],
-      tags: ["Dashboards", "Reporting", "+more"],
-      highlight: false
+      tags: ["Dashboards", "Reporting", "+more"]
     }
   ];
 
@@ -528,22 +553,22 @@ const FreelanceServices = () => {
           </div>
         </FadeInSection>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-8 items-stretch">
           {services.map((service, idx) => (
-            <FadeInSection key={idx} delay={idx * 150} className={`flex flex-col h-full rounded-[32px] overflow-hidden transition-all duration-300 ${service.highlight ? 'bg-primary shadow-2xl md:scale-105 z-10 border-0' : 'bg-white dark:bg-dark border border-gray-200 dark:border-gray-800 shadow-sm md:scale-100 z-0'}`}>
+            <FadeInSection key={idx} delay={idx * 150} className={`flex flex-col h-full rounded-[32px] overflow-hidden transition-all duration-300 ${service.bgClass} shadow-xl hover:shadow-2xl border-0 hover:-translate-y-1`}>
               {/* Top Header */}
-              <div className={`p-6 md:p-8 flex justify-between items-center ${service.highlight ? 'border-b border-white/10' : 'bg-white dark:bg-dark border-b border-gray-100 dark:border-gray-800'}`}>
-                <h4 className={`text-xl md:text-2xl font-bold tracking-wide ${service.highlight ? 'text-white' : 'text-gray-900 dark:text-white'}`}>
+              <div className={`p-6 md:p-8 flex justify-between items-center border-b ${service.dividerColor}`}>
+                <h4 className={`text-xl md:text-2xl font-bold tracking-wide ${service.textColor}`}>
                   {service.title}
                 </h4>
-                <div className={`w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-2xl ${service.iconBg}`}>
+                <div className={`w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-2xl ${service.iconBg} shadow-sm`}>
                   {service.icon}
                 </div>
               </div>
               
               {/* Body Content */}
-              <div className={`p-6 md:p-8 flex-grow flex flex-col ${service.highlight ? 'bg-primary' : 'bg-offwhite dark:bg-darker'}`}>
-                <p className={`text-sm leading-relaxed mb-8 ${service.highlight ? 'text-white/95 font-medium' : 'text-gray-600 dark:text-gray-400'}`}>
+              <div className={`p-6 md:p-8 flex-grow flex flex-col ${service.bgClass}`}>
+                <p className={`text-sm leading-relaxed mb-8 font-medium ${service.descColor}`}>
                   {service.description}
                 </p>
                 
@@ -555,7 +580,7 @@ const FreelanceServices = () => {
                 
                 <div className="flex flex-wrap gap-2">
                   {service.tags.map((tag, i) => (
-                    <span key={i} className={`px-4 py-1.5 text-xs font-bold rounded-full ${service.highlight ? 'border border-white/40 text-white' : 'bg-white dark:bg-dark text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700'}`}>
+                    <span key={i} className={`px-4 py-1.5 text-xs font-bold rounded-full border ${service.tagClass}`}>
                       {tag}
                     </span>
                   ))}
@@ -1003,6 +1028,16 @@ const ProjectPage = () => {
           <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 dark:text-white uppercase tracking-wide">{project.title}</h1>
           {project.subrole && (
             <p className="text-gray-600 dark:text-gray-400 mt-4 font-medium">{project.subrole}</p>
+          )}
+
+          {project.image && (
+            <div className="my-10 rounded-2xl md:rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl bg-gray-100 dark:bg-[#0c0c0e]">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-auto object-cover max-h-[600px]"
+              />
+            </div>
           )}
 
           <div className="h-px w-full bg-gray-200 dark:bg-gray-800 my-10"></div>
